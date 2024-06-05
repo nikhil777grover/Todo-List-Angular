@@ -1,4 +1,9 @@
-<h3>Todo List by Nikhil</h3>
-<div *ngFor="let item of todos">
-    <app-todo-item [todoItem]="item" (todoDelete)="DeleteSelectedTodo($event)"></app-todo-item>
+<div class="container">
+    <h2 class="text-center mb-3">Todo List by Nikhil</h2>
+    <h3>Add Todo</h3>
+    <app-add-todo (todoAdd)="AddTodo($event)"></app-add-todo>
+    <h3 class="my-3">My Todos</h3>
+    <div *ngFor="let item of todos">
+        <app-todo-item [todoItem]="item" (todoDelete)="DeleteSelectedTodo($event)"></app-todo-item>
+    </div>
 </div>
