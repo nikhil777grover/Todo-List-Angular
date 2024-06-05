@@ -31,4 +31,11 @@ export class TodosComponent{
       }
     ]
   }
+
+  DeleteSelectedTodo(todoitem: Todo)
+  {
+    console.log("Delete Item:",todoitem);
+    const index = this.todos.indexOf(todoitem);
+    this.todos.splice(index,1);
+  }
 }

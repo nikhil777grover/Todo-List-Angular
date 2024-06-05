@@ -1,4 +1,4 @@
 <h3>Todo List by Nikhil</h3>
 <div *ngFor="let item of todos">
-    <app-todo-item [todoItem]="item"></app-todo-item>
+    <app-todo-item [todoItem]="item" (todoDelete)="DeleteSelectedTodo($event)"></app-todo-item>
 </div>
