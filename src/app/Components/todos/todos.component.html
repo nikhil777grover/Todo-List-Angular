@@ -3,7 +3,10 @@
     <h3>Add Todo</h3>
     <app-add-todo (todoAdd)="AddTodo($event)"></app-add-todo>
     <h3 class="my-3">My Todos</h3>
-    <div *ngFor="let item of todos">
-        <app-todo-item [todoItem]="item" (todoDelete)="DeleteSelectedTodo($event)"></app-todo-item>
+    <div *ngIf="todos.length < 1; else elseBlock">No Todo item to display</div>
+    <ng-template #elseBlock>
+    <div *ngFor="let item of todos" class="my-3">
+        <app-todo-item [todoItem]="item" (todoDelete)="DeleteSelectedTodo($event)"  (activeTodo)="UpdateTodoActive($event)"></app-todo-item>
     </div>
+</ng-template>
 </div>

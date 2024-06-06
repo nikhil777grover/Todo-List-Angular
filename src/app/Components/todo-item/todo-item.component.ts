@@ -9,8 +9,14 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent {
   @Input() todoItem! : Todo;
   @Output() todoDelete = new EventEmitter<Todo>();
+  @Output() activeTodo = new EventEmitter<Todo>();
 
   OnDeleteButtonClick(todo:Todo){
     this.todoDelete.emit(todo);
+  }
+
+  OnCheckboxClick(){
+    // this.todoItem.active = ! this.todoItem.active;
+    this.activeTodo.emit(this.todoItem);
   }
 }
