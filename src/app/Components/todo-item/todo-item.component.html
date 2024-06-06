@@ -2,8 +2,8 @@
 <h5 [ngClass]="{'strike' : !todoItem.active}">{{ todoItem.title }}</h5>
 <p [ngClass]="{'strike' : !todoItem.active}">{{ todoItem.description }}</p>
 <div class="mb-3">
-<input type="checkbox" class="form-check-input" id="todoCheck" (click)="OnCheckboxClick()" [checked]="!todoItem.active"/>
-<label class="form-check-label" for="todoCheck"> Done</label>
+<input type="checkbox" class="form-check-input" id="todoCheck{{todoIndex}}" (click)="OnCheckboxClick()" [checked]="!todoItem.active"/>
+<label class="form-check-label" for="todoCheck{{todoIndex}}"> Done</label>
 </div>
 <button type="button" class="btn btn-danger btn-sm" (click)="OnDeleteButtonClick(todoItem)">Delete </button>
 </div>

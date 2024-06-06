@@ -8,6 +8,7 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponent {
   @Input() todoItem! : Todo;
+  @Input() todoIndex!: number;
   @Output() todoDelete = new EventEmitter<Todo>();
   @Output() activeTodo = new EventEmitter<Todo>();
 
